@@ -11,6 +11,7 @@ var game_state
 @onready var game_manager = $"."
 @onready var fade = $"../Fade" as Fade
 @onready var ui = $"../UI" as UI
+var starting_in = 0
 
 
 var points = 0
@@ -37,5 +38,8 @@ func end_game():
 func point_scored():
 	points += 1
 	ui.update_points(points)
-	
-	
+	if points == 10:
+		bird.kill()
+		pipe_spawner.stop();
+		ground.stop();
+		get_tree().change_scene_to_file("res://Levels/level3.tscn")

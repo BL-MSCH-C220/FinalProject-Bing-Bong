@@ -37,5 +37,8 @@ func end_game():
 func point_scored():
 	points += 1
 	ui.update_points(points)
-	
-	
+	if points == 5:
+		bird.kill()
+		pipe_spawner.stop();
+		ground.stop();
+		get_tree().change_scene_to_file("res://Levels/level2.tscn")
