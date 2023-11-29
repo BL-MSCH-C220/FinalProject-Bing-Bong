@@ -16,6 +16,7 @@ script = ExtResource("1_vh7hn")
 [node name="World" type="Node" parent="."]
 
 [node name="Background" type="Sprite2D" parent="World"]
+modulate = Color(1, 0.235294, 0.352941, 1)
 texture_filter = 1
 texture = ExtResource("2_cbrv8")
 
@@ -31,6 +32,7 @@ autostart = true
 [node name="Bird" parent="." instance=ExtResource("4_v1r7g")]
 
 [node name="Ground" parent="." instance=ExtResource("5_oq7yb")]
+modulate = Color(1, 0.235294, 0.352941, 1)
 position = Vector2(1, 200)
 
 [node name="Fade" parent="." instance=ExtResource("6_h4161")]
