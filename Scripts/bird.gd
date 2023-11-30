@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name Bird
 
+
 signal game_started
 
 @export var gravity = 900.0

@@ -13,7 +13,11 @@ var game_state
 @onready var ui = $"../UI" as UI
 
 
+
 var points = 0
+
+
+
 
 func _ready():
 	game_state = GameState.IDLE	
@@ -39,3 +43,4 @@ func point_scored():
 	ui.update_points(points)
 	
 	
+ 

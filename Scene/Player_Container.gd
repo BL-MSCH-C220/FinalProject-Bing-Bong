@@ -1,8 +1,6 @@
 extends Node2D
 
-var bird
-
 func _physics_process(_delta):
 	if get_child_count() == 0 and Global.Player != null:
-		bird = Global.Player.instantiate()
+		var bird = Global.Player.instantiate() as Bird
 		add_child(bird) 
