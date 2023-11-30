@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dtsnjli834kch"]
+[gd_scene load_steps=23 format=3 uid="uid://dtsnjli834kch"]
 
 [ext_resource type="Script" path="res://UI/Selector.gd" id="1_3xbl4"]
 [ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_yhdfa"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b0s6wylbi6l5n" path="res://Assets/bird/redbird-downflap.png" id="19_47de1"]
 [ext_resource type="Texture2D" uid="uid://dll7inbjcaioh" path="res://Assets/bird/redbird-upflap.png" id="20_myqh3"]
 [ext_resource type="Texture2D" uid="uid://d3m37lael3bic" path="res://Assets/bird/redbird-midflap.png" id="21_gnsbc"]
+[ext_resource type="AudioStream" uid="uid://cx3nl1a1fj6ud" path="res://Sound/Sakura-Girl-Beach-chosic.com_.mp3" id="22_jr6w7"]
 
 [node name="Selector" type="Control"]
 layout_mode = 3
@@ -110,6 +111,11 @@ offset_bottom = 336.0
 texture_normal = ExtResource("19_47de1")
 texture_pressed = ExtResource("20_myqh3")
 texture_hover = ExtResource("21_gnsbc")
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_jr6w7")
+volume_db = -1.0
+autoplay = true
 
 [connection signal="pressed" from="joy_bird" to="." method="_on_joy_bird_pressed"]
 [connection signal="pressed" from="sadness_bird" to="." method="_on_sadness_bird_pressed"]

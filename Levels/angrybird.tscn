@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://qvdbbegay2ux"]
+[gd_scene load_steps=9 format=3 uid="uid://qvdbbegay2ux"]
 
 [ext_resource type="Script" path="res://Scripts/bird.gd" id="1_6k2kj"]
-[ext_resource type="Texture2D" uid="uid://ccv3l717ru0ja" path="res://Assets/bird/purplebird-downflap.png" id="2_0vrvo"]
 [ext_resource type="Texture2D" uid="uid://b0s6wylbi6l5n" path="res://Assets/bird/redbird-downflap.png" id="3_dl8cu"]
 [ext_resource type="Texture2D" uid="uid://d3m37lael3bic" path="res://Assets/bird/redbird-midflap.png" id="4_y6fdw"]
 [ext_resource type="Texture2D" uid="uid://dll7inbjcaioh" path="res://Assets/bird/redbird-upflap.png" id="5_p3bfw"]
@@ -54,7 +53,7 @@ script = ExtResource("1_6k2kj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_0vrvo")
+texture = ExtResource("3_dl8cu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
