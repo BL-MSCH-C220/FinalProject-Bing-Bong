@@ -5,7 +5,7 @@ enum GameState {IDLE, RUNNING, ENDED}
 
 var game_state
 
-@onready var pipe_spawner = $"../PipeSpawner" as PipeSpawner
+@onready var pipe_spawner = $"../PipeSpawner" as PipeSpawnerLv5
 @onready var bird = get_node("../Bird") as Bird
 @onready var ground = $"../Ground" as Ground
 @onready var game_manager = $"."
