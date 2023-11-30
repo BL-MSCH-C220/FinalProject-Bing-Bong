@@ -9,4 +9,4 @@ func _on_level_play_pressed():
 
 
 func _on_endless_play_pressed():
-		get_tree().change_scene_to_file("res://Scene/main.tscn")
+		get_tree().change_scene_to_file("res://UI/selector.tscn")

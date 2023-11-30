@@ -1,0 +1,119 @@
+[gd_scene load_steps=22 format=3 uid="uid://dtsnjli834kch"]
+
+[ext_resource type="Script" path="res://UI/Selector.gd" id="1_3xbl4"]
+[ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_yhdfa"]
+[ext_resource type="FontFile" uid="uid://cu4lf4od2owng" path="res://Assets/font/FlappyBird.ttf" id="3_8tsx2"]
+[ext_resource type="Texture2D" uid="uid://bxetx2w3gs4gr" path="res://Assets/yellowbird-downflap.png" id="4_0qksw"]
+[ext_resource type="Texture2D" uid="uid://cfmtmqos4atil" path="res://Assets/yellowbird-upflap.png" id="5_oylgh"]
+[ext_resource type="Texture2D" uid="uid://bjn7mqbj3rrm" path="res://Assets/yellowbird-midflap.png" id="6_fedbp"]
+[ext_resource type="Texture2D" uid="uid://c71nmnua6hnco" path="res://Assets/bird/bluebird-downflap.png" id="7_gdhky"]
+[ext_resource type="Texture2D" uid="uid://cmqui6fq6h8q8" path="res://Assets/bird/bluebird-upflap.png" id="8_74mtu"]
+[ext_resource type="Texture2D" uid="uid://jtm6fnxwptwn" path="res://Assets/bird/bluebird-midflap.png" id="9_36t68"]
+[ext_resource type="Texture2D" uid="uid://bbkfa2824febo" path="res://Assets/bird/greenbird-downflap.png" id="10_3mkw0"]
+[ext_resource type="Texture2D" uid="uid://ccdbkuksidpvo" path="res://Assets/bird/greenbird-upflap.png" id="11_ekq2v"]
+[ext_resource type="Texture2D" uid="uid://tuodk7gval3f" path="res://Assets/bird/greenbird-midflap.png" id="12_2frrp"]
+[ext_resource type="Texture2D" uid="uid://bh5wcrfhor0ac" path="res://Assets/bird/orangebird-downflap.png" id="13_xfw41"]
+[ext_resource type="Texture2D" uid="uid://bke0qmy5x6kiq" path="res://Assets/bird/orangebird-upflap.png" id="14_c1h4v"]
+[ext_resource type="Texture2D" uid="uid://lq74ed5oqwuq" path="res://Assets/bird/orangebird-midflap.png" id="15_61ebm"]
+[ext_resource type="Texture2D" uid="uid://ccv3l717ru0ja" path="res://Assets/bird/purplebird-downflap.png" id="16_ef75e"]
+[ext_resource type="Texture2D" uid="uid://dojw8vdig3prd" path="res://Assets/bird/purplebird-upflap.png" id="17_xpk38"]
+[ext_resource type="Texture2D" uid="uid://b82g5marcntmp" path="res://Assets/bird/purplebird-midflap.png" id="18_sujhn"]
+[ext_resource type="Texture2D" uid="uid://b0s6wylbi6l5n" path="res://Assets/bird/redbird-downflap.png" id="19_47de1"]
+[ext_resource type="Texture2D" uid="uid://dll7inbjcaioh" path="res://Assets/bird/redbird-upflap.png" id="20_myqh3"]
+[ext_resource type="Texture2D" uid="uid://d3m37lael3bic" path="res://Assets/bird/redbird-midflap.png" id="21_gnsbc"]
+
+[node name="Selector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3xbl4")
+
+[node name="Background-day" type="Sprite2D" parent="."]
+position = Vector2(143, 253)
+texture = ExtResource("2_yhdfa")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -122.0
+offset_top = 30.0
+offset_right = 122.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_8tsx2")
+theme_override_font_sizes/font_size = 65
+text = "Choose your
+Emotion"
+horizontal_alignment = 1
+
+[node name="joy_bird" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 216.0
+offset_right = 85.0
+offset_bottom = 256.0
+texture_normal = ExtResource("4_0qksw")
+texture_pressed = ExtResource("5_oylgh")
+texture_hover = ExtResource("6_fedbp")
+
+[node name="sadness_bird" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 216.0
+offset_right = 165.0
+offset_bottom = 256.0
+texture_normal = ExtResource("7_gdhky")
+texture_pressed = ExtResource("8_74mtu")
+texture_hover = ExtResource("9_36t68")
+
+[node name="disgust_bird" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 216.0
+offset_right = 245.0
+offset_bottom = 256.0
+texture_normal = ExtResource("10_3mkw0")
+texture_pressed = ExtResource("11_ekq2v")
+texture_hover = ExtResource("12_2frrp")
+
+[node name="anxiety_bird" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 296.0
+offset_right = 85.0
+offset_bottom = 336.0
+texture_normal = ExtResource("13_xfw41")
+texture_pressed = ExtResource("14_c1h4v")
+texture_hover = ExtResource("15_61ebm")
+
+[node name="fear_bird" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 296.0
+offset_right = 165.0
+offset_bottom = 336.0
+texture_normal = ExtResource("16_ef75e")
+texture_pressed = ExtResource("17_xpk38")
+texture_hover = ExtResource("18_sujhn")
+
+[node name="anger_bird" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 296.0
+offset_right = 245.0
+offset_bottom = 336.0
+texture_normal = ExtResource("19_47de1")
+texture_pressed = ExtResource("20_myqh3")
+texture_hover = ExtResource("21_gnsbc")
+
+[connection signal="pressed" from="joy_bird" to="." method="_on_joy_bird_pressed"]
+[connection signal="pressed" from="sadness_bird" to="." method="_on_sadness_bird_pressed"]
+[connection signal="pressed" from="disgust_bird" to="." method="_on_disgust_bird_pressed"]
+[connection signal="pressed" from="anxiety_bird" to="." method="_on_anxiety_bird_pressed"]
+[connection signal="pressed" from="fear_bird" to="." method="_on_fear_bird_pressed"]
+[connection signal="pressed" from="anger_bird" to="." method="_on_anger_bird_pressed"]
