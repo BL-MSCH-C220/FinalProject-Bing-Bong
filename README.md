@@ -21,7 +21,12 @@ Flappy Bird inspiration
 
 ## References
 
-## Future Development
+Sounds from https://www.chosic.com
+
+## Future Developments
+
+Make each bird have different speed, gravity, and jump height
+Add Easy, Causal, Hard, and Frenzy modes the the Endless Play
 
 # Created by: Bing Bong
 Deo Akiode, Sofie DeMare, Lexi Scanlon, Joe Vessely
