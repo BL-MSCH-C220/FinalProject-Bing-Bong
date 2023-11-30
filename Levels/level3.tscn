@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Levels/GameManagerLv3.gd" id="1_ilrm6"]
 [ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_qgr45"]
-[ext_resource type="Script" path="res://Scripts/pipe_spawner.gd" id="3_mhv4v"]
-[ext_resource type="PackedScene" uid="uid://dtilpyyc3gkh2" path="res://Scene/bird.tscn" id="4_bwgdq"]
+[ext_resource type="Script" path="res://Levels/PipeSpawnerLv3.gd" id="3_n135n"]
+[ext_resource type="PackedScene" uid="uid://ckt3os03j516b" path="res://Levels/sadbird.tscn" id="4_4igvf"]
 [ext_resource type="PackedScene" uid="uid://cd7m1vf4tvbf5" path="res://Scene/ground.tscn" id="5_03crr"]
 [ext_resource type="PackedScene" uid="uid://3o0d528vtdwf" path="res://Scene/fade.tscn" id="6_x4lhc"]
 [ext_resource type="PackedScene" uid="uid://dtsfutbumtxem" path="res://Scene/UI.tscn" id="7_vvihn"]
 
-[node name="main" type="Node"]
+[node name="main2" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_ilrm6")
@@ -21,7 +21,7 @@ texture_filter = 1
 texture = ExtResource("2_qgr45")
 
 [node name="PipeSpawner" type="Node" parent="."]
-script = ExtResource("3_mhv4v")
+script = ExtResource("3_n135n")
 
 [node name="SpawnTimer" type="Timer" parent="PipeSpawner"]
 wait_time = 2.0
@@ -29,7 +29,7 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Bird" parent="." instance=ExtResource("4_bwgdq")]
+[node name="Bird" parent="." instance=ExtResource("4_4igvf")]
 
 [node name="Ground" parent="." instance=ExtResource("5_03crr")]
 modulate = Color(0.0705882, 0.372549, 0.847059, 1)
