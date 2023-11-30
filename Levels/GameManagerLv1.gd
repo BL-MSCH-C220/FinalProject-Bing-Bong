@@ -21,7 +21,7 @@ func _ready():
 	pipe_spawner.bird_crashed.connect(end_game)
 	ground.bird_crashed.connect(end_game)
 	pipe_spawner.point_scored.connect(point_scored)
-	var Instructions = get_node_or_null("/root/main2/Instructions")
+	var Instructions = get_node_or_null("/root/main/Instructions")
 	if Instructions != null:
 		Instructions.set_instructions("Level 1: Joy","Score 5 Points")
 	
@@ -34,9 +34,12 @@ func end_game():
 	if fade != null: 
 		fade.play()
 	bird.kill()
+	var Die_Sound = get_node("/root/main/bird_die")
 	pipe_spawner.stop();
 	ground.stop();
 	ui.on_game_over()
+	Die_Sound.play()
+	get_node("/root/main/music").stop()
 
 func point_scored():
 	points += 1

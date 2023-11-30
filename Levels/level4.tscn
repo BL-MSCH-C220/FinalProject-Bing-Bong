@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3dapn2rihlba"]
+[gd_scene load_steps=14 format=3 uid="uid://c3dapn2rihlba"]
 
 [ext_resource type="Script" path="res://Levels/GameManagerLv4.gd" id="1_w42dd"]
 [ext_resource type="Texture2D" uid="uid://gy7ksmnw4yfo" path="res://Assets/fear.png" id="2_hlp8t"]
@@ -9,8 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://dtsfutbumtxem" path="res://Scene/UI.tscn" id="7_4rlj3"]
 [ext_resource type="Script" path="res://Levels/InstructionsLv1.gd" id="8_4eiok"]
 [ext_resource type="FontFile" uid="uid://cu4lf4od2owng" path="res://Assets/font/FlappyBird.ttf" id="9_pf7np"]
+[ext_resource type="AudioStream" uid="uid://y3ikptf4ij0j" path="res://Sound/flap.mp3" id="10_kwi3o"]
+[ext_resource type="AudioStream" uid="uid://d1ciuj042h7ek" path="res://Sound/die.mp3" id="11_epdwp"]
+[ext_resource type="AudioStream" uid="uid://enoiwddq3ffh" path="res://Sound/hit.mp3" id="12_goark"]
+[ext_resource type="AudioStream" uid="uid://bi513hh3dp5nv" path="res://Sound/Labyrinth-of-Lost-Dreams-MP3(chosic.com).mp3" id="13_rxhto"]
 
-[node name="main2" type="Node"]
+[node name="main" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_w42dd")
@@ -115,5 +119,22 @@ vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="Instructions"]
 autostart = true
+
+[node name="flap_wings" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_kwi3o")
+volume_db = 1.0
+
+[node name="bird_die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_epdwp")
+volume_db = 5.0
+
+[node name="hit_pipe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_goark")
+volume_db = 2.0
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_rxhto")
+volume_db = 1.0
+autoplay = true
 
 [connection signal="timeout" from="Instructions/Timer" to="Instructions" method="_on_timer_timeout"]

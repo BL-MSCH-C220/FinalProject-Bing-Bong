@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://807216wy5pxq"]
+[gd_scene load_steps=14 format=3 uid="uid://807216wy5pxq"]
 
 [ext_resource type="Script" path="res://Levels/GameManagerLv3.gd" id="1_ilrm6"]
 [ext_resource type="Texture2D" uid="uid://cgrigvjh136l0" path="res://Assets/sadness.png" id="2_cisbe"]
@@ -9,8 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://dtsfutbumtxem" path="res://Scene/UI.tscn" id="7_vvihn"]
 [ext_resource type="Script" path="res://Levels/InstructionsLv1.gd" id="8_dawj6"]
 [ext_resource type="FontFile" uid="uid://cu4lf4od2owng" path="res://Assets/font/FlappyBird.ttf" id="9_oia6c"]
+[ext_resource type="AudioStream" uid="uid://y3ikptf4ij0j" path="res://Sound/flap.mp3" id="10_7gcx2"]
+[ext_resource type="AudioStream" uid="uid://d1ciuj042h7ek" path="res://Sound/die.mp3" id="11_ntl5g"]
+[ext_resource type="AudioStream" uid="uid://enoiwddq3ffh" path="res://Sound/hit.mp3" id="12_qsl8s"]
+[ext_resource type="AudioStream" uid="uid://nmt25f317yn8" path="res://Sound/sad.mp3" id="13_vyfct"]
 
-[node name="main2" type="Node"]
+[node name="main" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_ilrm6")
@@ -115,5 +119,22 @@ vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="Instructions"]
 autostart = true
+
+[node name="flap_wings" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_7gcx2")
+volume_db = 1.0
+
+[node name="bird_die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ntl5g")
+volume_db = 5.0
+
+[node name="hit_pipe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_qsl8s")
+volume_db = 2.0
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_vyfct")
+volume_db = 1.0
+autoplay = true
 
 [connection signal="timeout" from="Instructions/Timer" to="Instructions" method="_on_timer_timeout"]

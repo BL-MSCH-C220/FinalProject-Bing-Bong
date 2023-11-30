@@ -42,8 +42,8 @@ func _physics_process(delta):
 func jump():
 	velocity.y = jump_force
 	rotation = deg_to_rad(-30)
-	#var Flap_Sound = get_node("/root/main/Bird/Flap_Sound")
-	#Flap_Sound.play()
+	var Flap_Sound = get_node("/root/main/flap_wings")
+	Flap_Sound.play()
 
 func rotate_bird():
 	# Rotate downwards when falling
@@ -56,12 +56,10 @@ func rotate_bird():
 
 func kill():
 	should_process_input = false
-	#var Hit_Sound = get_node("/root/main/Bird/Hit_Sound")
-	#Hit_Sound.play()
+	
 	
 func stop():
 	animation_player.stop()
 	gravity = 0
 	velocity = Vector2.ZERO
-	#var Die_Sound = get_node("/root/main/Bird/Die_Sound")
-	#Die_Sound.play()
+	

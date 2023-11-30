@@ -34,9 +34,12 @@ func end_game():
 	if fade != null: 
 		fade.play()
 	bird.kill()
+	var Die_Sound = get_node("/root/main/bird_die")
+	Die_Sound.play()
 	pipe_spawner.stop();
 	ground.stop();
 	ui.on_game_over()
+	get_node("/root/main/music").stop()
 
 func point_scored():
 	points += 1
