@@ -6,11 +6,12 @@ enum GameState {IDLE, RUNNING, ENDED}
 var game_state
 
 @onready var pipe_spawner = $"../PipeSpawner" as PipeSpawner
-@onready var bird = get_node("../Bird") as Bird
+#@onready var bird = get_node("../Bird") as Bird
 @onready var ground = $"../Ground" as Ground
 @onready var game_manager = $"."
 @onready var fade = $"../Fade" as Fade
 @onready var ui = $"../UI" as UI
+var Player = null
 
 
 var points = 0

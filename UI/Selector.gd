@@ -2,7 +2,9 @@ extends Control
 
 
 func _on_joy_bird_pressed():
-	pass # Replace with function body.
+	#GameManager.Player = load("res://Scene/bird.tscn")
+	#get_tree().change_scene_to_file("res://game.tscn")
+	pass
 
 
 func _on_sadness_bird_pressed():
