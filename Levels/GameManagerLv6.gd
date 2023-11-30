@@ -21,6 +21,9 @@ func _ready():
 	pipe_spawner.bird_crashed.connect(end_game)
 	ground.bird_crashed.connect(end_game)
 	pipe_spawner.point_scored.connect(point_scored)
+	var Instructions = get_node_or_null("/root/main2/Instructions")
+	if Instructions != null:
+		Instructions.set_instructions("Level 6: Anxiety","Score 30 Points")
 
 func on_game_started():
 	game_state = GameState.RUNNING
@@ -37,7 +40,7 @@ func end_game():
 func point_scored():
 	points += 1
 	ui.update_points(points)
-	if points == 25:
+	if points == 30:
 		bird.kill()
 		pipe_spawner.stop();
 		ground.stop();

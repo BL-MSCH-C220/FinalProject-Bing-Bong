@@ -16,14 +16,14 @@ var game_state
 var points = 0
 
 func _ready():
-	var Instructions = get_node_or_null("/root/Game/UI/Instructions")
-	if Instructions != null:
-		Instructions.set_instructions("Joy","Score 5 Points")
 	game_state = GameState.IDLE	
 	bird.game_started.connect(on_game_started)
 	pipe_spawner.bird_crashed.connect(end_game)
 	ground.bird_crashed.connect(end_game)
 	pipe_spawner.point_scored.connect(point_scored)
+	var Instructions = get_node_or_null("/root/main2/Instructions")
+	if Instructions != null:
+		Instructions.set_instructions("Level 1: Joy","Score 5 Points")
 	
 
 func on_game_started():

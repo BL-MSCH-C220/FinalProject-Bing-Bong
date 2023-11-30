@@ -22,6 +22,9 @@ func _ready():
 	pipe_spawner.bird_crashed.connect(end_game)
 	ground.bird_crashed.connect(end_game)
 	pipe_spawner.point_scored.connect(point_scored)
+	var Instructions = get_node_or_null("/root/main/Instructions")
+	if Instructions != null:
+		Instructions.set_instructions("Level 2: Anger","Score 10 Points")
 
 func on_game_started():
 	game_state = GameState.RUNNING
