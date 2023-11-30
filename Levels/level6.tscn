@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://Levels/GameManagerLv6.gd" id="1_4s4uv"]
 [ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_xxeie"]
 [ext_resource type="Script" path="res://Scripts/pipe_spawner.gd" id="3_skxuk"]
-[ext_resource type="PackedScene" uid="uid://g1sx2gntrkka" path="res://Levels/anxietybird.tscn" id="4_35rah"]
+[ext_resource type="PackedScene" uid="uid://dtilpyyc3gkh2" path="res://Scene/bird.tscn" id="4_jvyn8"]
 [ext_resource type="PackedScene" uid="uid://cd7m1vf4tvbf5" path="res://Scene/ground.tscn" id="5_6djbx"]
 [ext_resource type="PackedScene" uid="uid://3o0d528vtdwf" path="res://Scene/fade.tscn" id="6_6ch3v"]
 [ext_resource type="PackedScene" uid="uid://dtsfutbumtxem" path="res://Scene/UI.tscn" id="7_lf7k1"]
 
-[node name="main2" type="Node"]
+[node name="main" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_4s4uv")
@@ -16,7 +16,6 @@ script = ExtResource("1_4s4uv")
 [node name="World" type="Node" parent="."]
 
 [node name="Background" type="Sprite2D" parent="World"]
-modulate = Color(0.792157, 0.32549, 0.0627451, 1)
 texture_filter = 1
 texture = ExtResource("2_xxeie")
 
@@ -29,10 +28,9 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Bird" parent="." instance=ExtResource("4_35rah")]
+[node name="Bird" parent="." instance=ExtResource("4_jvyn8")]
 
 [node name="Ground" parent="." instance=ExtResource("5_6djbx")]
-modulate = Color(0.792157, 0.32549, 0.0627451, 1)
 position = Vector2(1, 200)
 
 [node name="Fade" parent="." instance=ExtResource("6_6ch3v")]

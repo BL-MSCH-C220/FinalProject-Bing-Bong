@@ -1,18 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://dtilpyyc3gkh2"]
 
 [ext_resource type="Script" path="res://Scripts/bird.gd" id="1_ngkor"]
-<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bjn7mqbj3rrm" path="res://Assets/yellowbird-midflap.png" id="1_wejmr"]
 [ext_resource type="Texture2D" uid="uid://bxetx2w3gs4gr" path="res://Assets/yellowbird-downflap.png" id="3_hed3f"]
 [ext_resource type="Texture2D" uid="uid://cfmtmqos4atil" path="res://Assets/yellowbird-upflap.png" id="4_qjk42"]
 [ext_resource type="AudioStream" uid="uid://y3ikptf4ij0j" path="res://Sound/flap.mp3" id="5_iv7oj"]
 [ext_resource type="AudioStream" uid="uid://d1ciuj042h7ek" path="res://Sound/die.mp3" id="6_5ktn5"]
 [ext_resource type="AudioStream" uid="uid://enoiwddq3ffh" path="res://Sound/hit.mp3" id="7_xqkt4"]
-=======
-[ext_resource type="Texture2D" uid="uid://bxetx2w3gs4gr" path="res://Assets/yellowbird-downflap.png" id="2_fa07l"]
-[ext_resource type="Texture2D" uid="uid://bjn7mqbj3rrm" path="res://Assets/yellowbird-midflap.png" id="2_kwusl"]
-[ext_resource type="Texture2D" uid="uid://cfmtmqos4atil" path="res://Assets/yellowbird-upflap.png" id="4_mso6w"]
->>>>>>> 6d0b9757443b85f67966284af51f3c13c6e54221
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q700l"]
 height = 28.0
@@ -31,7 +25,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_fa07l"), ExtResource("2_kwusl"), ExtResource("4_mso6w")]
+"values": [ExtResource("3_hed3f"), ExtResource("1_wejmr"), ExtResource("4_qjk42")]
 }
 
 [sub_resource type="Animation" id="Animation_1kly1"]
@@ -57,16 +51,13 @@ _data = {
 }
 
 [node name="Bird" type="CharacterBody2D"]
+position = Vector2(0, -10)
 motion_mode = 1
 script = ExtResource("1_ngkor")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-<<<<<<< HEAD
 texture = ExtResource("3_hed3f")
-=======
-texture = ExtResource("2_kwusl")
->>>>>>> 6d0b9757443b85f67966284af51f3c13c6e54221
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

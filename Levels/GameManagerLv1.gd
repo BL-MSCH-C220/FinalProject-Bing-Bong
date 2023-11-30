@@ -5,7 +5,7 @@ enum GameState {IDLE, RUNNING, ENDED}
 
 var game_state
 
-@onready var pipe_spawner = $"../PipeSpawner" as PipeSpawnerLv1
+@onready var pipe_spawner = $"../PipeSpawner" as PipeSpawner
 @onready var bird = get_node("../Bird") as Bird
 @onready var ground = $"../Ground" as Ground
 @onready var game_manager = $"."
@@ -16,15 +16,11 @@ var game_state
 var points = 0
 
 func _ready():
-	var Instructions = get_node_or_null("/root/Game/UI/Instructions")
-	if Instructions != null:
-		Instructions.set_instructions("Joy","Score 5 Points")
 	game_state = GameState.IDLE	
 	bird.game_started.connect(on_game_started)
 	pipe_spawner.bird_crashed.connect(end_game)
 	ground.bird_crashed.connect(end_game)
 	pipe_spawner.point_scored.connect(point_scored)
-	
 
 func on_game_started():
 	game_state = GameState.RUNNING
@@ -46,4 +42,3 @@ func point_scored():
 		pipe_spawner.stop();
 		ground.stop();
 		get_tree().change_scene_to_file("res://Levels/level2.tscn")
-
