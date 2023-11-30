@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://3o0d528vtdwf" path="res://Scene/fade.tscn" id="6_qear1"]
 [ext_resource type="PackedScene" uid="uid://dtsfutbumtxem" path="res://Scene/UI.tscn" id="7_i4kqq"]
 
-[node name="main" type="Node"]
+[node name="main2" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_t6gky")

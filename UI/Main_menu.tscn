@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://da0vqrascmtva"]
+[gd_scene load_steps=4 format=3 uid="uid://da0vqrascmtva"]
 
 [ext_resource type="Script" path="res://UI/Main_menu.gd" id="1_g2ihd"]
+[ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_1fh51"]
+[ext_resource type="FontFile" uid="uid://cu4lf4od2owng" path="res://Assets/font/FlappyBird.ttf" id="2_v4o02"]
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -11,6 +13,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g2ihd")
 
+[node name="Background-day" type="Sprite2D" parent="."]
+position = Vector2(145, 254)
+texture = ExtResource("2_1fh51")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -19,12 +25,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -143.0
-offset_top = -106.0
+offset_top = -156.0
 offset_right = 143.0
-offset_bottom = -30.0
+offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("2_v4o02")
+theme_override_font_sizes/font_size = 55
 text = "Inside Out
  Side Scroller"
 horizontal_alignment = 1
@@ -43,6 +50,8 @@ offset_right = 51.5
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v4o02")
+theme_override_font_sizes/font_size = 30
 text = "Endless Play"
 
 [node name="Level Play" type="Button" parent="."]
@@ -58,6 +67,8 @@ offset_right = 42.5
 offset_bottom = 65.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v4o02")
+theme_override_font_sizes/font_size = 30
 text = "Level Play"
 
 [node name="Quit" type="Button" parent="."]
@@ -73,6 +84,8 @@ offset_right = 21.0
 offset_bottom = 115.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v4o02")
+theme_override_font_sizes/font_size = 30
 text = "Quit"
 
 [connection signal="pressed" from="Endless Play" to="." method="_on_endless_play_pressed"]

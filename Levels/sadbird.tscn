@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckt3os03j516b"]
+
+[ext_resource type="Script" path="res://Scripts/bird.gd" id="1_pmiwl"]
+[ext_resource type="Texture2D" uid="uid://c71nmnua6hnco" path="res://Assets/bird/bluebird-downflap.png" id="3_0a1bi"]
+[ext_resource type="Texture2D" uid="uid://jtm6fnxwptwn" path="res://Assets/bird/bluebird-midflap.png" id="4_dnhbj"]
+[ext_resource type="Texture2D" uid="uid://cmqui6fq6h8q8" path="res://Assets/bird/bluebird-upflap.png" id="5_6yac1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q700l"]
+height = 28.0
+
+[sub_resource type="Animation" id="Animation_dne58"]
+resource_name = "flap_wings"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_0a1bi"), ExtResource("4_dnhbj"), ExtResource("5_6yac1")]
+}
+
+[sub_resource type="Animation" id="Animation_1kly1"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.965936, 0.840896),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khapi"]
+_data = {
+"flap_wings": SubResource("Animation_dne58"),
+"idle": SubResource("Animation_1kly1")
+}
+
+[node name="Bird" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_pmiwl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_0a1bi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_q700l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_khapi")
+}
