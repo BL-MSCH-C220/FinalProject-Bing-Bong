@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c3dapn2rihlba"]
 
 [ext_resource type="Script" path="res://Levels/GameManagerLv4.gd" id="1_w42dd"]
-[ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_5yx6y"]
+[ext_resource type="Texture2D" uid="uid://gy7ksmnw4yfo" path="res://Assets/fear.png" id="2_hlp8t"]
 [ext_resource type="Script" path="res://Levels/PipeSpawnerLv4.gd" id="3_yjltl"]
 [ext_resource type="PackedScene" uid="uid://pfwlunw37uqv" path="res://Levels/fearbird.tscn" id="4_8rxtr"]
 [ext_resource type="PackedScene" uid="uid://cd7m1vf4tvbf5" path="res://Scene/ground.tscn" id="5_f3ryn"]
@@ -20,7 +20,9 @@ script = ExtResource("1_w42dd")
 [node name="Background" type="Sprite2D" parent="World"]
 modulate = Color(0.454902, 0.00392157, 1, 1)
 texture_filter = 1
-texture = ExtResource("2_5yx6y")
+position = Vector2(1.5, -3.44444)
+scale = Vector2(1.96528, 1.96528)
+texture = ExtResource("2_hlp8t")
 
 [node name="PipeSpawner" type="Node" parent="."]
 script = ExtResource("3_yjltl")

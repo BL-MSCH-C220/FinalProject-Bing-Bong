@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://807216wy5pxq"]
 
 [ext_resource type="Script" path="res://Levels/GameManagerLv3.gd" id="1_ilrm6"]
-[ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_qgr45"]
+[ext_resource type="Texture2D" uid="uid://cgrigvjh136l0" path="res://Assets/sadness.png" id="2_cisbe"]
 [ext_resource type="Script" path="res://Levels/PipeSpawnerLv3.gd" id="3_n135n"]
 [ext_resource type="PackedScene" uid="uid://ckt3os03j516b" path="res://Levels/sadbird.tscn" id="4_4igvf"]
 [ext_resource type="PackedScene" uid="uid://cd7m1vf4tvbf5" path="res://Scene/ground.tscn" id="5_03crr"]
@@ -20,7 +20,9 @@ script = ExtResource("1_ilrm6")
 [node name="Background" type="Sprite2D" parent="World"]
 modulate = Color(0.0705882, 0.372549, 0.847059, 1)
 texture_filter = 1
-texture = ExtResource("2_qgr45")
+position = Vector2(0, 3.77777)
+scale = Vector2(2.01389, 2.01389)
+texture = ExtResource("2_cisbe")
 
 [node name="PipeSpawner" type="Node" parent="."]
 script = ExtResource("3_n135n")
@@ -90,6 +92,8 @@ offset_left = -33.0
 offset_top = 15.0
 offset_right = 13.0
 offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("9_oia6c")
 theme_override_font_sizes/font_size = 15
 text = "Score 5 points"
@@ -104,6 +108,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 272.0
 offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
