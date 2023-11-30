@@ -5,7 +5,7 @@ class_name PipeSpawnerLv3
 signal bird_crashed
 signal point_scored
 
-var pipe_pair_scene = preload("res://Scene/pipe_pair.tscn")
+var pipe_pair_scene = preload("res://Scene/pipe_pairLv3.tscn")
 
 @export var pipe_speed = -200
 @onready var spawn_timer = $SpawnTimer
