@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Levels/GameManagerLv5.gd" id="1_oscku"]
 [ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_gmdl8"]
-[ext_resource type="Script" path="res://Scripts/pipe_spawner.gd" id="3_l45hh"]
+[ext_resource type="Script" path="res://Levels/PipeSpawnerLv5.gd" id="3_rexgq"]
 [ext_resource type="PackedScene" uid="uid://bdrvlhcsj4xko" path="res://Levels/digustbird.tscn" id="4_xfn5f"]
 [ext_resource type="PackedScene" uid="uid://cd7m1vf4tvbf5" path="res://Scene/ground.tscn" id="5_yw3cy"]
 [ext_resource type="PackedScene" uid="uid://3o0d528vtdwf" path="res://Scene/fade.tscn" id="6_4xb60"]
@@ -21,7 +21,7 @@ texture_filter = 1
 texture = ExtResource("2_gmdl8")
 
 [node name="PipeSpawner" type="Node" parent="."]
-script = ExtResource("3_l45hh")
+script = ExtResource("3_rexgq")
 
 [node name="SpawnTimer" type="Timer" parent="PipeSpawner"]
 wait_time = 2.0

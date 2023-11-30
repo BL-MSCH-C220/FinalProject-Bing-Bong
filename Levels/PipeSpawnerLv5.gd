@@ -1,13 +1,13 @@
 extends Node
 
-class_name PipeSpawnerLv3
+class_name PipeSpawnerLv5
 
 signal bird_crashed
 signal point_scored
 
 var pipe_pair_scene = preload("res://Scene/pipe_pair.tscn")
 
-@export var pipe_speed = -200
+@export var pipe_speed = -250
 @onready var spawn_timer = $SpawnTimer
 
 
