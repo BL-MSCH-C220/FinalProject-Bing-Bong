@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://vwahli7pi7cs"]
+[gd_scene load_steps=14 format=3 uid="uid://vwahli7pi7cs"]
 
 [ext_resource type="Script" path="res://Levels/GameManagerLv6.gd" id="1_4s4uv"]
-[ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_xxeie"]
+[ext_resource type="Texture2D" uid="uid://cimnyneskwpmv" path="res://Assets/anxiety.png" id="2_akifx"]
 [ext_resource type="Script" path="res://Levels/PipeSpawnerLv6.gd" id="3_57b1o"]
 [ext_resource type="PackedScene" uid="uid://g1sx2gntrkka" path="res://Levels/anxietybird.tscn" id="4_35rah"]
 [ext_resource type="PackedScene" uid="uid://cd7m1vf4tvbf5" path="res://Scene/ground.tscn" id="5_6djbx"]
@@ -9,8 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://dtsfutbumtxem" path="res://Scene/UI.tscn" id="7_lf7k1"]
 [ext_resource type="Script" path="res://Levels/InstructionsLv1.gd" id="8_t77bh"]
 [ext_resource type="FontFile" uid="uid://cu4lf4od2owng" path="res://Assets/font/FlappyBird.ttf" id="9_1xdri"]
+[ext_resource type="AudioStream" uid="uid://y3ikptf4ij0j" path="res://Sound/flap.mp3" id="10_abb43"]
+[ext_resource type="AudioStream" uid="uid://d1ciuj042h7ek" path="res://Sound/die.mp3" id="11_xw1ns"]
+[ext_resource type="AudioStream" uid="uid://enoiwddq3ffh" path="res://Sound/hit.mp3" id="12_rw2ou"]
+[ext_resource type="AudioStream" uid="uid://bhp4gn8n6b41e" path="res://Sound/Rafael_Archangel_-_18_-_Nervous_Termination(chosic.com).mp3" id="13_wlkqr"]
 
-[node name="main2" type="Node"]
+[node name="main" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_4s4uv")
@@ -20,7 +24,9 @@ script = ExtResource("1_4s4uv")
 [node name="Background" type="Sprite2D" parent="World"]
 modulate = Color(0.792157, 0.32549, 0.0627451, 1)
 texture_filter = 1
-texture = ExtResource("2_xxeie")
+position = Vector2(2.00001, 2.55556)
+scale = Vector2(1.97222, 1.97222)
+texture = ExtResource("2_akifx")
 
 [node name="PipeSpawner" type="Node" parent="."]
 script = ExtResource("3_57b1o")
@@ -113,5 +119,22 @@ vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="Instructions"]
 autostart = true
+
+[node name="flap_wings" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_abb43")
+volume_db = 1.0
+
+[node name="bird_die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_xw1ns")
+volume_db = 5.0
+
+[node name="hit_pipe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_rw2ou")
+volume_db = 2.0
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_wlkqr")
+volume_db = 1.0
+autoplay = true
 
 [connection signal="timeout" from="Instructions/Timer" to="Instructions" method="_on_timer_timeout"]

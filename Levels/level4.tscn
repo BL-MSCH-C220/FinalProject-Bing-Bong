@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3dapn2rihlba"]
+[gd_scene load_steps=14 format=3 uid="uid://c3dapn2rihlba"]
 
 [ext_resource type="Script" path="res://Levels/GameManagerLv4.gd" id="1_w42dd"]
-[ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_5yx6y"]
+[ext_resource type="Texture2D" uid="uid://gy7ksmnw4yfo" path="res://Assets/fear.png" id="2_hlp8t"]
 [ext_resource type="Script" path="res://Levels/PipeSpawnerLv4.gd" id="3_yjltl"]
 [ext_resource type="PackedScene" uid="uid://pfwlunw37uqv" path="res://Levels/fearbird.tscn" id="4_8rxtr"]
 [ext_resource type="PackedScene" uid="uid://cd7m1vf4tvbf5" path="res://Scene/ground.tscn" id="5_f3ryn"]
@@ -9,8 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://dtsfutbumtxem" path="res://Scene/UI.tscn" id="7_4rlj3"]
 [ext_resource type="Script" path="res://Levels/InstructionsLv1.gd" id="8_4eiok"]
 [ext_resource type="FontFile" uid="uid://cu4lf4od2owng" path="res://Assets/font/FlappyBird.ttf" id="9_pf7np"]
+[ext_resource type="AudioStream" uid="uid://y3ikptf4ij0j" path="res://Sound/flap.mp3" id="10_kwi3o"]
+[ext_resource type="AudioStream" uid="uid://d1ciuj042h7ek" path="res://Sound/die.mp3" id="11_epdwp"]
+[ext_resource type="AudioStream" uid="uid://enoiwddq3ffh" path="res://Sound/hit.mp3" id="12_goark"]
+[ext_resource type="AudioStream" uid="uid://bi513hh3dp5nv" path="res://Sound/Labyrinth-of-Lost-Dreams-MP3(chosic.com).mp3" id="13_rxhto"]
 
-[node name="main2" type="Node"]
+[node name="main" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_w42dd")
@@ -20,7 +24,9 @@ script = ExtResource("1_w42dd")
 [node name="Background" type="Sprite2D" parent="World"]
 modulate = Color(0.454902, 0.00392157, 1, 1)
 texture_filter = 1
-texture = ExtResource("2_5yx6y")
+position = Vector2(1.5, -3.44444)
+scale = Vector2(1.96528, 1.96528)
+texture = ExtResource("2_hlp8t")
 
 [node name="PipeSpawner" type="Node" parent="."]
 script = ExtResource("3_yjltl")
@@ -113,5 +119,22 @@ vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="Instructions"]
 autostart = true
+
+[node name="flap_wings" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_kwi3o")
+volume_db = 1.0
+
+[node name="bird_die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_epdwp")
+volume_db = 5.0
+
+[node name="hit_pipe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_goark")
+volume_db = 2.0
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_rxhto")
+volume_db = 1.0
+autoplay = true
 
 [connection signal="timeout" from="Instructions/Timer" to="Instructions" method="_on_timer_timeout"]

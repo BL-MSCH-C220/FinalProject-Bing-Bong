@@ -34,6 +34,8 @@ func spawn_pipe():
 	
 func on_bird_entered():
 	bird_crashed.emit()
+	var Hit_Sound = get_node("/root/main/hit_pipe")
+	Hit_Sound.play()
 	stop()
 	
 func stop():

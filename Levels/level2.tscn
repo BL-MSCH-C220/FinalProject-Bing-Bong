@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwvpxy7jyx5rt"]
+[gd_scene load_steps=14 format=3 uid="uid://bwvpxy7jyx5rt"]
 
 [ext_resource type="Script" path="res://Levels/GameManagerLv2.gd" id="1_vh7hn"]
-[ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_cbrv8"]
+[ext_resource type="Texture2D" uid="uid://cmjxtsl71p6t7" path="res://Assets/anger.png" id="2_72sx7"]
 [ext_resource type="Script" path="res://Levels/PipeSpawnerLv2.gd" id="3_cl1pq"]
 [ext_resource type="PackedScene" uid="uid://qvdbbegay2ux" path="res://Levels/angrybird.tscn" id="4_ts4nn"]
 [ext_resource type="PackedScene" uid="uid://cd7m1vf4tvbf5" path="res://Scene/ground.tscn" id="5_oq7yb"]
@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://dtsfutbumtxem" path="res://Scene/UI.tscn" id="7_vprkc"]
 [ext_resource type="Script" path="res://Levels/InstructionsLv1.gd" id="8_vi1xp"]
 [ext_resource type="FontFile" uid="uid://cu4lf4od2owng" path="res://Assets/font/FlappyBird.ttf" id="9_x5xe8"]
+[ext_resource type="AudioStream" uid="uid://y3ikptf4ij0j" path="res://Sound/flap.mp3" id="10_kvrnk"]
+[ext_resource type="AudioStream" uid="uid://d1ciuj042h7ek" path="res://Sound/die.mp3" id="11_3erel"]
+[ext_resource type="AudioStream" uid="uid://enoiwddq3ffh" path="res://Sound/hit.mp3" id="12_5558e"]
+[ext_resource type="AudioStream" uid="uid://b0mv7js8px40r" path="res://Sound/arthur-vyncke-cherry-metal(chosic.com).mp3" id="13_82qa7"]
 
 [node name="main" type="Node"]
 
@@ -20,7 +24,9 @@ script = ExtResource("1_vh7hn")
 [node name="Background" type="Sprite2D" parent="World"]
 modulate = Color(1, 0.235294, 0.352941, 1)
 texture_filter = 1
-texture = ExtResource("2_cbrv8")
+position = Vector2(-3.5, 1.33333)
+scale = Vector2(1.97917, 1.97917)
+texture = ExtResource("2_72sx7")
 
 [node name="PipeSpawner" type="Node" parent="."]
 script = ExtResource("3_cl1pq")
@@ -113,5 +119,22 @@ vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="Instructions"]
 autostart = true
+
+[node name="flap_wings" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_kvrnk")
+volume_db = 1.0
+
+[node name="bird_die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_3erel")
+volume_db = 5.0
+
+[node name="hit_pipe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_5558e")
+volume_db = 2.0
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_82qa7")
+volume_db = 1.0
+autoplay = true
 
 [connection signal="timeout" from="Instructions/Timer" to="Instructions" method="_on_timer_timeout"]

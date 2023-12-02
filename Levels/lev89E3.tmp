@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=3 uid="uid://brfyv6kejwnnx"]
+
+[ext_resource type="Script" path="res://Levels/GameManagerLv1.gd" id="1_t6gky"]
+[ext_resource type="Texture2D" uid="uid://c7tuvj4nprbxo" path="res://Assets/joy.png" id="2_5gaft"]
+[ext_resource type="Script" path="res://Levels/PipeSpawnerLv1.gd" id="3_7rqd0"]
+[ext_resource type="PackedScene" uid="uid://dtilpyyc3gkh2" path="res://Scene/bird.tscn" id="4_sr83e"]
+[ext_resource type="PackedScene" uid="uid://cd7m1vf4tvbf5" path="res://Scene/ground.tscn" id="5_mnf65"]
+[ext_resource type="PackedScene" uid="uid://3o0d528vtdwf" path="res://Scene/fade.tscn" id="6_qear1"]
+[ext_resource type="PackedScene" uid="uid://dtsfutbumtxem" path="res://Scene/UI.tscn" id="7_i4kqq"]
+[ext_resource type="Script" path="res://Levels/InstructionsLv1.gd" id="8_f2yim"]
+[ext_resource type="FontFile" uid="uid://cu4lf4od2owng" path="res://Assets/font/FlappyBird.ttf" id="9_m68ko"]
+
+[node name="main2" type="Node"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_t6gky")
+
+[node name="World" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="World"]
+texture_filter = 1
+position = Vector2(7.34329e-05, -0.222095)
+scale = Vector2(1.98611, 1.98611)
+texture = ExtResource("2_5gaft")
+
+[node name="PipeSpawner" type="Node" parent="."]
+script = ExtResource("3_7rqd0")
+
+[node name="SpawnTimer" type="Timer" parent="PipeSpawner"]
+wait_time = 2.0
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Bird" parent="." instance=ExtResource("4_sr83e")]
+
+[node name="Ground" parent="." instance=ExtResource("5_mnf65")]
+position = Vector2(1, 200)
+
+[node name="Fade" parent="." instance=ExtResource("6_qear1")]
+
+[node name="UI" parent="." instance=ExtResource("7_i4kqq")]
+
+[node name="Instructions" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_f2yim")
+
+[node name="Background" type="ColorRect" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -35.0
+offset_right = 40.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.803922, 0.921569, 0.227451, 0.611765)
+
+[node name="Name" type="Label" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -30.0
+offset_right = 33.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_m68ko")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Goal" type="Label" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = 15.0
+offset_right = 13.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_m68ko")
+theme_override_font_sizes/font_size = 15
+text = "Score 5 points"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Starting" type="Label" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 272.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Instructions"]
+autostart = true
+
+[connection signal="timeout" from="Instructions/Timer" to="Instructions" method="_on_timer_timeout"]

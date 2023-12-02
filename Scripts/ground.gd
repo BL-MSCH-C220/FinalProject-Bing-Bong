@@ -27,6 +27,8 @@ func _process(delta):
 
 func _body_entered(body):
 	bird_crashed.emit()
+	var Hit_Sound = get_node("/root/main/hit_pipe")
+	Hit_Sound.play()
 	(body as Bird).stop()
 	
 func stop():

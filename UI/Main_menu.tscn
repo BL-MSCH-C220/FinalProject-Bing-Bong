@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://da0vqrascmtva"]
+[gd_scene load_steps=5 format=3 uid="uid://da0vqrascmtva"]
 
 [ext_resource type="Script" path="res://UI/Main_menu.gd" id="1_g2ihd"]
 [ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="2_1fh51"]
 [ext_resource type="FontFile" uid="uid://cu4lf4od2owng" path="res://Assets/font/FlappyBird.ttf" id="2_v4o02"]
+[ext_resource type="AudioStream" uid="uid://cx3nl1a1fj6ud" path="res://Sound/Sakura-Girl-Beach-chosic.com_.mp3" id="4_ooe5l"]
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -87,6 +88,11 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_v4o02")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ooe5l")
+volume_db = -1.0
+autoplay = true
 
 [connection signal="pressed" from="Endless Play" to="." method="_on_endless_play_pressed"]
 [connection signal="pressed" from="Level Play" to="." method="_on_level_play_pressed"]

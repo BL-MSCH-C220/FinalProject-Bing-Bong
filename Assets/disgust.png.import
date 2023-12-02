@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dwvou0ucpm7rc"
+=======
+uid="uid://bhrlewb2jviby"
+>>>>>>> edc63e94c5ca77f0f957500c0812609c2480e0fe
 path="res://.godot/imported/disgust.png-57172d007f8491cf03672702b9c315db.ctex"
 metadata={
 "vram_texture": false
