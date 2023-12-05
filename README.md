@@ -34,3 +34,4 @@ Add Easy, Causal, Hard, and Frenzy modes the the Endless Play
 - Joe Vessely: Sprites and Asset Management
 - Lexi Scanlon: Background Art and Music
 
+
