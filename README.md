@@ -30,3 +30,8 @@ Add Easy, Causal, Hard, and Frenzy modes the the Endless Play
 
 # Created by: Bing Bong
 Deo Akiode, Sofie DeMare, Lexi Scanlon, Joe Vessely
+Deo Akiode: Coding and Debugging
+Sofie DeMare: Sound effects and File Management
+Joe Vessely: Sprites and Asset Management
+Lexi Scanlon: Background Art and Music
+
