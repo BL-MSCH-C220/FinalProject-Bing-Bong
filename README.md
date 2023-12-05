@@ -21,7 +21,8 @@ Flappy Bird inspiration
 
 ## References
 
-Sounds from https://www.chosic.com
+Music from https://www.chosic.com
+Built off from CyberPotato's tutorial (https://www.youtube.com/watch?v=lkDvTdbOIEo)
 
 ## Future Developments
 
